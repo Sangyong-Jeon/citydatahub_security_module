@@ -404,14 +404,14 @@ router.route('/users/:userId')
         if(concat){
           query+=",";
         }
-        query+="email=\'"+req.body.email+"\'";
+        query+=" email=\'"+req.body.email+"\'";
         concat = true;
       }
       if(req.body.phone)
       {
         if(concat)
           query+=",";
-        query+="phone=\'"+req.body.phone+"\'";
+        query+=" phone=\'"+req.body.phone+"\'";
       }
       query+=" WHERE user_id_pk=\'"+req.params.userId+"\'";
       DB.ByQuery(query,(err,result)=>{
